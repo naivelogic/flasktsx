@@ -1,0 +1,32 @@
+// .devcontainer/devcontainer.json
+{
+    "name": "flask tsx dev",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10",
+    "hostRequirements": {"cpus": 2, "memory": "8gb"},
+    "features": {
+        "node": "18",
+        "docker-from-docker": {"version": "latest"}
+    },
+    "postCreateCommand": "pip install -r requirements.txt && npm install --prefix frontend",
+    "customizations": {
+        "codespaces": {
+            "openFiles": []
+        },
+        "vscode": {
+            "settings": {
+                "python.pythonPath": "/usr/local/bin/python",
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                //"ms-azuretools.vscode-docker",
+                "esbenp.prettier-vscode"
+                //"dbaeumer.vscode-eslint"
+            ],
+            "forwardPorts": [5000,3000]
+        }
+    },
+    //"mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"],
+    "remoteUser": "vscode"
+}
