@@ -1,8 +1,7 @@
-// frontend/src/App.tsx
 import React, { useState } from 'react';
 import './chat.styles.css';
 
-const Chatv2: React.FC = () => {
+const Chat: React.FC = () => {
     const [question, setQuestion] = useState('');
     const [output, setOutput] = useState<{ role: string, content: string }[]>([]);
     const [currentContext, setCurrentContext] = useState<{ role: string, content: string }[]>([]);
@@ -17,11 +16,9 @@ const Chatv2: React.FC = () => {
         setQuestion('');
 
         try {
-            const response = await fetch('/api/contextless-message', {
+            const response = await fetch('/api/get-message', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
             });
             const result = await response.json();
@@ -60,4 +57,4 @@ const Chatv2: React.FC = () => {
     );
 };
 
-export default Chatv2;
+export default Chat;

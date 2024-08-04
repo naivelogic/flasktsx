@@ -4,12 +4,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Home from './home';
-import Chatv2 from './chat_v2/Chat';
-//import App from './App';
+import Chat from './chat/Chat';
 
 const router = createHashRouter([
   {path: '/',element: <Home />,},
-  {path: '/chatv2',element: <Chatv2 />,},
+  {path: '/chat',element: <Chat />,},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

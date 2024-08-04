@@ -38,18 +38,9 @@ app = Flask(__name__, static_folder='frontend/build/', static_url_path='/')
 def serve_react_app():
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/contextless-message', methods=['POST'])
-def contextless_message():
-    data = request.json
-    question = data['message']
-    chat_history = data.get('context', [])
-    resp = get_response(question, chat_history)
-    return jsonify({"resp": resp})
-
-
-# API route for contextless message
-@app.route('/api/contextless-message', methods=['POST'])
-def contextless_message_v2():
+# API route for getting chat message
+@app.route('/api/get-message', methods=['POST'])
+def get_message():
     data = request.json
     question = data['message']
     chat_history = data.get('context', [])
