@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './chat.styles.css';
 
-const Chat: React.FC = () => {
+interface ChatEchoProps {
+    apiEndpoint?: string;
+}
+
+const ChatEcho: React.FC<ChatEchoProps> = ({ apiEndpoint = '/api/chat-echo/get-message' }) => {
     const [question, setQuestion] = useState('');
     const [output, setOutput] = useState<{ role: string, content: string }[]>([]);
     const [currentContext, setCurrentContext] = useState<{ role: string, content: string }[]>([]);
@@ -16,9 +20,7 @@ const Chat: React.FC = () => {
         setQuestion('');
 
         try {
-            const response = await fetch('/api/get-message', {
-            // const response = await fetch('/api1/get-message', {
-            //const response = await fetch('http://localhost:5000/api/get-message', { // Update with your backend URL
+            const response = await fetch(apiEndpoint, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
@@ -47,16 +49,16 @@ const Chat: React.FC = () => {
                         type="text"
                         name="question"
                         id="question"
-                        placeholder="Enter your question?"
+                        placeholder="Enter your question? 📝👋IM CHAT ECHO🙋‍♂️"
                         value={question}
                         onChange={(e) => setQuestion(e.target.value)}
                         required
                     />
-                    <input type="button" value="Send" id="chat-send"onClick={sendMessage}/>
+                    <input type="button" value="Send" id="chat-send" onClick={sendMessage}/>
                 </form>
             </div>
         </div>
     );
 };
 
-export default Chat;
+export default ChatEcho;
