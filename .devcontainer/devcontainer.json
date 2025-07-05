@@ -7,7 +7,8 @@
         "node": "18",
         "docker-from-docker": {"version": "latest"}
     },
-    "postCreateCommand": "pip install -r requirements.txt && npm install --prefix frontend",
+    //"postCreateCommand": "pip install -r requirements.txt && npm install --prefix frontend",
+    "postCreateCommand": "pip install -r requirements.txt && npm install --prefix frontend && npm install --prefix backend",
     "customizations": {
         "codespaces": {
             "openFiles": []
