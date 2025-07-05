@@ -11,8 +11,8 @@ Now, you’ll learn how to build a backend using **TypeScript** and **Node.js**�
 ## Quickstart
 
 Follow these steps to get the backend and frontend running and test the chat app quickly!
-<details>
-<summary>Quickstart</summary>
+
+![](/backend/dev/demo.png)
 
 ### 1. Install Dependencies
 
@@ -40,6 +40,9 @@ cp .env-sample .env
 ```
 
 ---
+## Start Backend and Frontend in Terminal (split the terminal)
+
+![](/backend/dev/terminal.png)
 
 ### 3. Start the Backend
 
@@ -63,6 +66,8 @@ npm run dev
 
 This will start the frontend on [http://localhost:3000](http://localhost:3000).
 
+![](/backend/dev/home.png)
+
 ---
 
 ### 5. Test the App
@@ -71,11 +76,13 @@ This will start the frontend on [http://localhost:3000](http://localhost:3000).
 - Try the different chat options (Echo, Echo 2, and AI Chat) from the home page.
 - Type a message and see the responses from the backend!
 
+
+![](/backend/dev/demo.png)
+
 ---
 
 **That’s it! You’re ready to develop and experiment with your TypeScript chat app. 🚀**
 
-</details>
 
 ---
 
@@ -147,6 +154,8 @@ Learn how to organize your backend by creating and importing/exporting new APIs.
 - How to split your backend into multiple files (routers)
 - How to import/export routers and add them to your main app
 
+![](/backend/dev/chatEcho2.png)
+
 ---
 
 ## Activity 3: Adding Azure OpenAI Chat API
@@ -165,6 +174,8 @@ Connect your backend to Azure OpenAI to get real AI-powered chat responses!
 - How to use environment variables for API keys and endpoints
 - How to call external APIs from your backend
 - How to add advanced features to your chat app
+
+![](/backend/dev/demo.png)
 
 ---
 
